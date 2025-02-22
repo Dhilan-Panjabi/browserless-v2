@@ -8,7 +8,7 @@ COPY Caddyfile ./
 
 RUN caddy fmt --overwrite Caddyfile
 
-FROM ghcr.io/browserless/chromium:latest
+FROM ghcr.io/browserless/chromium:1.50  # Updated to use Playwright 1.50
 
 COPY --from=caddy /srv/Caddyfile ./
 
